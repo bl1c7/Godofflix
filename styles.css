@@ -1,0 +1,157 @@
+body {
+  color: white;
+  background: black;
+  margin: 0px;
+  font-family: "Chakra Petch", sans-serif;
+  margin-bottom: 100px; /* Gives some space at the bottom */
+}
+
+header {
+  border-bottom: solid 2px rgb(42, 122, 228);
+  padding: 20px;
+  font-size: 32px;
+  color: rgb(42, 122, 228);
+  text-align: center; /* Center the "GAMEVAULT" text */
+  text-transform: uppercase; /* Make the header uppercase */
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* --- Hero Section Styling --- */
+.chamada-texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Align text to the start (left) */
+  padding: 20px;
+  max-width: 400px; /* Limit text width for better readability */
+}
+
+.chamada-texto h1 {
+  font-size: 3em; /* Larger heading for the main title */
+  color: white; /* Main title color */
+  margin-bottom: 10px;
+  line-height: 1.1; /* Adjust line height */
+}
+
+.chamada-texto p {
+  font-size: 1.2em; /* Slightly larger paragraph text */
+  color: #aaa; /* Subtler color for the tags */
+  margin-top: 0;
+}
+
+section {
+  background: rgb(184, 156, 213); /* This is a purple hue */
+  padding-bottom: 80px;
+  padding-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Vertically align items in the section */
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  gap: 40px; /* Space between the text and the iframe */
+}
+
+/* Specific styling for the main hero section */
+section:first-of-type {
+  background: linear-gradient(to right, #000 60%, rgb(184, 156, 213)); /* Gradient background for the hero section */
+  color: white;
+}
+
+/* --- Video Category Sections --- */
+.categoria {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 50px; /* Space between sections */
+  background: black; /* Ensure category sections have a black background */
+}
+
+.categoria h2 {
+  color: rgb(42, 122, 228); /* Blue color for category titles */
+  font-size: 2em;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.categoria-videos {
+  display: flex;
+  overflow-x: auto; /* Enables horizontal scrolling if content overflows */
+  gap: 10px; /* Space between video images */
+  padding: 20px; /* Padding around the images */
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: rgb(42, 122, 228) #333; /* For Firefox */
+}
+
+/* Webkit browsers (Chrome, Safari) scrollbar styling */
+.categoria-videos::-webkit-scrollbar {
+  height: 8px; /* Height of the horizontal scrollbar */
+}
+
+.categoria-videos::-webkit-scrollbar-track {
+  background: #333; /* Color of the scrollbar track */
+  border-radius: 10px;
+}
+
+.categoria-videos::-webkit-scrollbar-thumb {
+  background-color: rgb(42, 122, 228); /* Color of the scrollbar thumb */
+  border-radius: 10px;
+  border: 2px solid #333; /* Adds a border around the thumb */
+}
+
+.categoria-videos img {
+  height: 200px; /* Fixed height for video thumbnails */
+  width: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensures images cover the area without distortion */
+  border-radius: 5px; /* Slightly rounded corners for images */
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, border 0.2s ease-in-out; /* Smooth transitions */
+  opacity: 0.7; /* Slightly dimmed when not hovered */
+}
+
+.categoria-videos img:hover {
+  opacity: 1.0; /* Full opacity on hover */
+  border: 2px solid red; /* Red border on hover, making it stand out */
+  transform: scale(1.05); /* Slightly enlarge image on hover */
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  section {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    padding: 40px 20px; /* Adjust padding */
+  }
+
+  section:first-of-type {
+    background: black; /* Simpler background for hero on small screens */
+  }
+
+  .chamada-texto {
+    max-width: 100%; /* Use full width */
+    text-align: center; /* Center text */
+    align-items: center; /* Center items */
+  }
+
+  .chamada-texto h1 {
+    font-size: 2em; /* Smaller font size for title */
+  }
+
+  .chamada-texto p {
+    font-size: 1em; /* Smaller font size for paragraph */
+  }
+
+  iframe {
+    width: 90%; /* Make iframe responsive */
+    height: 250px; /* Adjust height */
+  }
+
+  .categoria-videos {
+    padding: 10px; /* Less padding for category videos */
+  }
+
+  .categoria-videos img {
+    height: 150px; /* Smaller images on mobile */
+  }
+
+  .categoria h2 {
+    font-size: 1.5em; /* Smaller category titles */
+    padding-left: 10px;
+  }
+}
